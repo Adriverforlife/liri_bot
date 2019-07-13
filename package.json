@@ -1,0 +1,25 @@
+{
+  "name": "liri_bot",
+  "version": "0.0.1",
+  "description": "Trying to do the hw in the most advanced way possible.",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adriverforlife/liri_bot.git"
+  },
+  "author": "Michael Eguina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adriverforlife/liri_bot/issues"
+  },
+  "homepage": "https://github.com/Adriverforlife/liri_bot#readme",
+  "dependencies": {
+    "ajax": "0.0.4",
+    "dotenv": "^8.0.0",
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1"
+  }
+}
