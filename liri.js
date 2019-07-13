@@ -57,11 +57,33 @@ if (action == "concert-this") {
 
 }
 if ("spotify-this-song") {
+    if(search==undefined){
+        search="The Sign"
+    }
 
     spotify
-        .search({ type: 'track', query: 'All the Small Things' })
+        .search({ type: 'track', query: search, limit: 1 })
         .then(function (response) {
-            console.log(response);
+            //console.log(response.tracks)
+            console.log("~~~~")
+            for(var i=0;i<response.tracks.items.length;i++){
+               // console.log(response.tracks.items[i])
+            //     * Artist(s)
+            console.log("The song we found for your search features:")
+            for(var j=0;j<response.tracks.items[i].artists.length;j++){
+                console.log(response.tracks.items[i].artists[j].name)}
+            //     * The song's name
+            console.log("~~~~")
+            console.log("The tracks name is "+response.tracks.items[i].name)
+            //console.log(response.tracks.items[i].name)
+            //     * A preview link of the song from Spotify
+            console.log("A preview link for this song is "+response.tracks.items[i].external_urls.spotify)
+            //     * The album that the song is from
+            console.log("This song can be found on the Album "+response.tracks.items[i].album.name)
+            console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+           
+            //   * If no song is provided then your program will default to "The Sign" by Ace of Base.
+            }
         })
         .catch(function (err) {
             console.log(err);
